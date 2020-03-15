@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- use w3.css for styling need internet-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <title>IMDB</title>
+    
+    <script>
+
+     //use async function for dynamic page
+     async function getUrl() {
+     var url = document.getElementById("url").value;
+     const response = await fetch('http://localhost:2020/getMovieDetails?Movieid='+url);
+     const receivedResponse = await response.json(); //extract JSON from the http response
+   
+     //sent data to id 
+     document.getElementById("Result").innerHTML=JSON.stringify(receivedResponse,null,2);
+     }
+       
+       </script>
+  </head>
+  <body>
+        <form class="w3-display-middle ">
+        <div class="w3-center">
+          <h1 class="w3-blue w3-hover-yellow">IMDB API</h1>
+          <input 
+        class="w3-hover-sand w3-hover-text-black"
+        size="60"
+        id="url"
+          type="text"
+          name="url"
+          placeholder="Enter Url to Get Details"
+          required
+        />
+         <button type="button" id="my" onclick="getUrl()">Submit</button>
+        </div>
+    <!-- use pre for print the json data as pretty   -->
+
+    <pre  class="w3-mobile w3-container w3-hover-pale-blue  w3-card">  
+          <p  id="Result"></form>
+  </pre>
+
+</form>
+
+
+  </body>
+</html>
