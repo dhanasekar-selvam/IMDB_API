@@ -16,8 +16,8 @@ the API has been requested and Render the data from JSON response and show it on
 3.Finally I am storing the requested data in Mysql
 
 output images:
-![](main.png)
-![](output1.png)
-![](output2.png)
+![](images/main.png)
+![](images/output1.png)
+![](images/output2.png)
 
 I had used express js framework,Request method for api get request,JSON for response,Mysql for database.
